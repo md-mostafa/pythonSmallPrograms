@@ -11,9 +11,12 @@ def clock():
     second = time.strftime("%S")
     day = time.strftime("%A")
     am_pm = time.strftime("%p")
+    time_zone = time.strftime("%Z")
+
     my_label.config(text=hour+" : "+minute+" : "+second +" "+am_pm)
     my_label.after(1000, clock)
-    my_label2.config(text=day)
+    my_label2.config(text=time_zone + " "+day)
+
 
 my_label = Label(root, text=" ", font=("Helvetica", 48), fg="green", bg="black")
 my_label.pack(pady=20)
